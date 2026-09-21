@@ -315,15 +315,13 @@ main {
 }
 
 .flow {
-  display: flex;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 12px;
   margin-top: 20px;
-  flex-wrap: wrap;
 }
 
 .flow-step {
-  flex: 1 1 180px;
   background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -356,12 +354,7 @@ main {
 }
 
 .flow-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dim);
-  font-size: 1.4rem;
-  padding: 0 2px;
+  display: none;
 }
 
 .highlight-note {
@@ -369,15 +362,6 @@ main {
   font-size: 0.95rem;
   max-width: 680px;
   margin-top: 20px;
-}
-
-@media (max-width: 640px) {
-  .flow {
-    flex-direction: column;
-  }
-  .flow-arrow {
-    transform: rotate(90deg);
-  }
 }
 
 .journey-intro {
