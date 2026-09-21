@@ -78,26 +78,17 @@ const slides = [
 ];
 
 let slideIndex = 0;
+const slideViewer = document.getElementById("slideViewer");
 const slideImg = document.getElementById("slideImg");
 const slideCounter = document.getElementById("slideCounter");
 const slideCaption = document.getElementById("slideCaption");
 const slidePrev = document.getElementById("slidePrev");
 const slideNext = document.getElementById("slideNext");
-const slideDots = document.getElementById("slideDots");
+const slideFullscreen = document.getElementById("slideFullscreen");
 const slideTotal = document.getElementById("slideTotal");
+const slideTotalBottom = document.getElementById("slideTotalBottom");
 slideTotal.textContent = slides.length;
-
-slides.forEach((slide, i) => {
-  const dot = document.createElement("button");
-  dot.className = "slide-dot";
-  dot.type = "button";
-  dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
-  dot.addEventListener("click", () => {
-    slideIndex = i;
-    renderSlide();
-  });
-  slideDots.appendChild(dot);
-});
+slideTotalBottom.textContent = slides.length;
 
 function renderSlide() {
   const slide = slides[slideIndex];
@@ -105,9 +96,6 @@ function renderSlide() {
   slideImg.alt = slide.alt;
   slideCaption.textContent = slide.caption;
   slideCounter.textContent = slideIndex + 1;
-  slideDots.querySelectorAll(".slide-dot").forEach((dot, i) => {
-    dot.classList.toggle("active", i === slideIndex);
-  });
 }
 
 slidePrev.addEventListener("click", () => {
@@ -118,6 +106,14 @@ slidePrev.addEventListener("click", () => {
 slideNext.addEventListener("click", () => {
   slideIndex = (slideIndex + 1) % slides.length;
   renderSlide();
+});
+
+slideFullscreen.addEventListener("click", () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  } else {
+    slideViewer.requestFullscreen();
+  }
 });
 
 renderSlide();
