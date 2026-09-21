@@ -12,12 +12,20 @@
 
 * { box-sizing: border-box; }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -81,6 +89,7 @@ h1, h2, h3 { line-height: 1.25; }
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 80px 20px 60px;
+  scroll-margin-top: 64px;
 }
 
 .eyebrow {
@@ -144,6 +153,7 @@ main {
 .section {
   padding: 48px 0;
   border-top: 1px solid var(--border);
+  scroll-margin-top: 64px;
 }
 
 .section h2 {
@@ -177,6 +187,10 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px;
+  transition: border-color 0.15s ease;
+}
+.project-card:hover {
+  border-color: var(--accent);
 }
 
 .project-card h3 {
@@ -364,6 +378,65 @@ main {
   .flow-arrow {
     transform: rotate(90deg);
   }
+}
+
+.journey-intro {
+  color: var(--text-dim);
+  max-width: 640px;
+  margin: 0 0 24px;
+}
+
+.timeline {
+  position: relative;
+  border-left: 2px solid var(--border);
+  margin: 0;
+  padding-left: 24px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 28px;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--bg);
+}
+
+.timeline-year {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 0 0 4px;
+  letter-spacing: 0.02em;
+}
+
+.timeline-role {
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+}
+
+.timeline-desc {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  max-width: 620px;
+  margin: 0;
+}
+
+.journey-note {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  max-width: 680px;
+  margin-top: 24px;
 }
 
 .contact-links {
