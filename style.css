@@ -196,12 +196,70 @@ main {
   max-width: 620px;
 }
 
-.chart-wrap {
+.flow {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  flex: 1 1 180px;
   background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 20px;
-  margin-top: 16px;
+  padding: 18px;
+}
+
+.flow-num {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.flow-step h3 {
+  font-size: 1rem;
+  margin: 0 0 8px;
+}
+
+.flow-step p {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 1.4rem;
+  padding: 0 2px;
+}
+
+.highlight-note {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  max-width: 680px;
+  margin-top: 20px;
+}
+
+@media (max-width: 640px) {
+  .flow {
+    flex-direction: column;
+  }
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
 }
 
 .contact-links {

@@ -6,7 +6,6 @@
 <title>Alief Akbar | Data Engineer</title>
 <meta name="description" content="Alief Akbar, Data Engineer. Portfolio of data pipeline and business intelligence projects.">
 <link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 </head>
 <body>
 
@@ -98,12 +97,40 @@
   <section id="highlight" class="section">
     <h2>Data Highlight</h2>
     <p class="highlight-caption">
-      Regional GMV vs target from the Sales Analysis Dashboard project, aggregated across 19+ brand
-      accounts and 8 marketplaces. Numbers are region wide totals, not tied to any single brand.
+      A look at how one of my portfolio projects,
+      <a href="https://github.com/AliveNata/Business-Intelligence-Portfolio/tree/main/projects/NBA%20Player%20Stats%20Data%20Analysis%202023-2024" target="_blank" rel="noopener">NBA Player Stats Analysis</a>,
+      turns messy raw data into an actual answer instead of just a chart.
     </p>
-    <div class="chart-wrap">
-      <canvas id="gmvChart" height="260"></canvas>
+    <div class="flow">
+      <div class="flow-step">
+        <span class="flow-num">1</span>
+        <h3>11 raw snapshots</h3>
+        <p>Stats scraped on 11 different dates, each file slightly inconsistent with the others.</p>
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step">
+        <span class="flow-num">2</span>
+        <h3>1 clean dataset</h3>
+        <p>Combined, deduplicated, encoding fixed, player names normalized so they match across files.</p>
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step">
+        <span class="flow-num">3</span>
+        <h3>Statistical test</h3>
+        <p>An ANOVA test checks whether a player's scoring really differs month to month, not just a guess from eyeballing a chart.</p>
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step">
+        <span class="flow-num">4</span>
+        <h3>Forecast</h3>
+        <p>A linear regression model predicts next month's scoring average, per player.</p>
+      </div>
     </div>
+    <p class="highlight-note">
+      That is the difference between reporting a number and analyzing it. A chart shows what happened, a test
+      and a forecast say whether it means anything and what might happen next. This is the kind of thinking a
+      data analyst or data engineer is expected to show in a portfolio project, not just a pretty visualization.
+    </p>
   </section>
 
   <section id="contact" class="section">
